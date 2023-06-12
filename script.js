@@ -1,8 +1,10 @@
-
 let gridSize = 16;
 
 function createGrid(gridSize) {
     const container = document.getElementById("container");
+    container.style.setProperty('--grid-size', gridSize);
+
+    container.innerHTML = '';
 
     for (let i = 1; i <= gridSize; i++) {
         for (let j = 1; j <= gridSize; j++) {
@@ -21,6 +23,6 @@ function changeGridSize() {
     createGrid(gridSize);
 }
 
-window.addEventListener("load", createGrid(gridSize));
+window.addEventListener("load", () => createGrid(gridSize));
 
 
