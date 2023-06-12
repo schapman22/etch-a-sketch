@@ -1,3 +1,4 @@
+
 function createGrid() {
     const container = document.getElementById("container");
 
@@ -6,12 +7,13 @@ function createGrid() {
             const square = document.createElement("div");
             square.classList.add("grid-square");
             container.appendChild(square);
+            square.addEventListener("mouseover", () => {
+                square.style.backgroundColor = 'black';
+            });
         }
     }
 }
 
 window.addEventListener("load", createGrid);
-
-
 
 
