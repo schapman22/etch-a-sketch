@@ -1,9 +1,11 @@
 
-function createGrid() {
+let gridSize = 16;
+
+function createGrid(gridSize) {
     const container = document.getElementById("container");
 
-    for (i = 1; i <= 16; i++) {
-        for ( j = 1; j <= 16; j++) {
+    for (let i = 1; i <= gridSize; i++) {
+        for (let j = 1; j <= gridSize; j++) {
             const square = document.createElement("div");
             square.classList.add("grid-square");
             container.appendChild(square);
@@ -14,6 +16,11 @@ function createGrid() {
     }
 }
 
-window.addEventListener("load", createGrid);
+function changeGridSize() {
+    gridSize = prompt("Enter grid size (1-100)", "16");
+    createGrid(gridSize);
+}
+
+window.addEventListener("load", createGrid(gridSize));
 
 
