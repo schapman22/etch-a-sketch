@@ -20,7 +20,12 @@ function createGrid(gridSize) {
 
 function changeGridSize() {
     gridSize = prompt("Enter grid size (1-100)", "16");
-    createGrid(gridSize);
+    if (gridSize >= 1 && gridSize <= 100) {
+        createGrid(gridSize);
+    } else {
+        changeGridSize();
+    }
+    
 }
 
 window.addEventListener("load", () => createGrid(gridSize));
